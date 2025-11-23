@@ -37,7 +37,7 @@ public class Library {
 
     public static void main(String[] args) {
 
-        Person person = new Person("John", 25, "Male");
+        Person person = new Person("Shaun", 26, "Male" , "1234567");
         System.out.println(person);
 
         writing(person);
