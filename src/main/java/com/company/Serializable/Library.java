@@ -4,13 +4,13 @@ import java.io.*;
 
 public class Library {
 
-    public static void writing(Person person){
+    public static void writing(Person person) {
         try {
             String path = System.getProperty("user.dir");
-            File file = new File(path,"Person.txt");
+            File file = new File(path, "Person.txt");
             System.out.println("Writing to: " + file.getAbsolutePath());
 
-            //change the directory of the file
+            // change the directory of the file
             FileOutputStream fileOutputStream = new FileOutputStream(file);
             ObjectOutputStream objectOutputStream = new ObjectOutputStream(fileOutputStream);
 
@@ -23,13 +23,12 @@ public class Library {
         }
     }
 
-    public static Person reading(){
-        try{
+    public static Person reading() {
+        try {
             FileInputStream fileInputStream = new FileInputStream("Person.txt");
             ObjectInputStream objectInputStream = new ObjectInputStream(fileInputStream);
             return (Person) objectInputStream.readObject();
-        }
-        catch(Exception e){
+        } catch (Exception e) {
             e.printStackTrace();
         }
         return null;
@@ -37,17 +36,13 @@ public class Library {
 
     public static void main(String[] args) {
 
-        Person person = new Person("Shaun", 26, "Male" , "1234567");
+        Person person = new Person("Shaun", 26, "Male", "1234567");
         System.out.println(person);
 
         writing(person);
 
         Person person2 = reading();
         System.out.println(person2);
-
-
-
-
 
     }
 }
