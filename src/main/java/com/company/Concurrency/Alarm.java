@@ -8,6 +8,11 @@ public class Alarm {
 
     private String reminder;
 
+    public Alarm(LocalDateTime dateTime, String reminder) {
+        this.dateTime = dateTime;
+        this.reminder = reminder;
+    }
+
     public String getReminder() {
         return reminder;
     }
