@@ -20,21 +20,22 @@ public class Main {
         }
 
         // Event loop
-        // try {
-        // while (true) {
-        // alarmClock.startAlarms();
-        // }
-        // } catch (Exception e) {
-        // Thread.currentThread().interrupt();
-        // e.printStackTrace();
-        // }
+        try {
+            while (true) {
+                alarmClock.startAlarms();
+                Thread.sleep(1000);
+            }
+        } catch (Exception e) {
+            Thread.currentThread().interrupt();
+            e.printStackTrace();
+        }
 
         // multiple consumer
-        for (int i = 1; i <= 10; i++) {
-            Thread thread = new Thread(() -> alarmClock.startAlarms());
-            thread.start();
+        // for (int i = 1; i <= 10; i++) {
+        // Thread thread = new Thread(() -> alarmClock.startAlarms());
+        // thread.start();
 
-        }
+        // }
 
     }
 }
