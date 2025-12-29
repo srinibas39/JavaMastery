@@ -19,14 +19,21 @@ public class Main {
             thread.start();
         }
 
-        // consumer setup
-        try {
-            while (true) {
-                alarmClock.startAlarms();
-            }
-        } catch (Exception e) {
-            Thread.currentThread().interrupt();
-            e.printStackTrace();
+        // Event loop
+        // try {
+        // while (true) {
+        // alarmClock.startAlarms();
+        // }
+        // } catch (Exception e) {
+        // Thread.currentThread().interrupt();
+        // e.printStackTrace();
+        // }
+
+        // multiple consumer
+        for (int i = 1; i <= 10; i++) {
+            Thread thread = new Thread(() -> alarmClock.startAlarms());
+            thread.start();
+
         }
 
     }
